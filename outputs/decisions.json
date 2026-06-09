@@ -1,0 +1,1651 @@
+[
+  {
+    "customer_id": "CUST-00001",
+    "name": "Viktor Petrov",
+    "outcome": "REJECT_AND_REPORT",
+    "risk_band": "Medium",
+    "risk_score": 35,
+    "factors": {
+      "High-risk jurisdiction": 35
+    },
+    "confidence": 1.0,
+    "human_review_required": true,
+    "explanation": "Decision for Viktor Petrov (CUST-00001): REJECT_AND_REPORT. Sanctions: confirmed match to 'Viktor Petrov' on UN Consolidated (synthetic) (DOB corroborated), program: Counter-terrorism financing. Risk rating: Medium (35/100). Main drivers: High-risk jurisdiction. Required action: Block onboarding, freeze any pending activity, and escalate to the MLRO for regulatory reporting.. Routed to a human officer because: Mandatory review trigger(s): SANCTIONS_HIT.",
+    "decision_drivers": [
+      "SANCTIONS_HIT"
+    ],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "5af59b7d0aff",
+      "d0f5809d0af2",
+      "b00c1d8f5513",
+      "dd52f6e36031",
+      "1eb71c2ac686",
+      "33b731f2e995",
+      "6b59857c674b"
+    ]
+  },
+  {
+    "customer_id": "CUST-00002",
+    "name": "Viktor Petroff",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 20,
+    "factors": {
+      "Lump-sum source of wealth": 8,
+      "Unresolved name match": 12
+    },
+    "confidence": 0.75,
+    "human_review_required": false,
+    "explanation": "Decision for Viktor Petroff (CUST-00002): APPROVE_STP. Sanctions: a name-only near match was found but the date of birth did not corroborate, so it is treated as a false positive. Risk rating: Low (20/100). Main drivers: Unresolved name match, Lump-sum source of wealth. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "458040201b4f",
+      "fce1bcc93387",
+      "7c4a7c6fb2ad",
+      "fa55c9d2b7f6",
+      "e4d81c44e435",
+      "a2802bb3311f"
+    ]
+  },
+  {
+    "customer_id": "CUST-00003",
+    "name": "Daniel Reyes",
+    "outcome": "ESCALATE_EDD",
+    "risk_band": "Medium",
+    "risk_score": 40,
+    "factors": {
+      "High net worth (EDD trigger)": 10,
+      "Politically exposed person": 30
+    },
+    "confidence": 1.0,
+    "human_review_required": true,
+    "explanation": "Decision for Daniel Reyes (CUST-00003): ESCALATE_EDD. Sanctions: no match against screened lists. PEP: identified as a Politically Exposed Person (Deputy Minister of Finance, PH) \u2014 enhanced due diligence is mandatory. Risk rating: Medium (40/100). Main drivers: Politically exposed person, High net worth (EDD trigger). Required action: Apply enhanced due diligence: senior management sign-off, source-of-wealth corroboration, ongoing monitoring at elevated frequency.. Routed to a human officer because: Mandatory review trigger(s): PEP.",
+    "decision_drivers": [
+      "PEP"
+    ],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "d4f67a1a6158",
+      "605d521acd56",
+      "bcd2614a556e",
+      "e3f61bcf4f39",
+      "e25bb325fe10",
+      "c09c42a6ff2e",
+      "317becd92d21"
+    ]
+  },
+  {
+    "customer_id": "CUST-00004",
+    "name": "Lina Nair",
+    "outcome": "ESCALATE_EDD",
+    "risk_band": "High",
+    "risk_score": 70,
+    "factors": {
+      "High-risk jurisdiction": 35,
+      "High-risk industry": 25,
+      "High net worth (EDD trigger)": 10
+    },
+    "confidence": 1.0,
+    "human_review_required": true,
+    "explanation": "Decision for Lina Nair (CUST-00004): ESCALATE_EDD. Sanctions: no match against screened lists. Risk rating: High (70/100). Main drivers: High-risk jurisdiction, High-risk industry, High net worth (EDD trigger). Required action: Apply enhanced due diligence: senior management sign-off, source-of-wealth corroboration, ongoing monitoring at elevated frequency.. Routed to a human officer because: Outcome 'ESCALATE_EDD' requires officer sign-off.",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "dbf12f0ebf50",
+      "e12f5b5ceae5",
+      "851951a36fd5",
+      "ad57684ab8ae",
+      "27581f3ea37f",
+      "ea2617411d2d",
+      "3cb2c496f257"
+    ]
+  },
+  {
+    "customer_id": "CUST-00005",
+    "name": "Marcus Goh",
+    "outcome": "ESCALATE_EDD",
+    "risk_band": "High",
+    "risk_score": 55,
+    "factors": {
+      "High-risk industry": 25,
+      "High net worth (EDD trigger)": 10,
+      "Adverse media": 20
+    },
+    "confidence": 0.85,
+    "human_review_required": true,
+    "explanation": "Decision for Marcus Goh (CUST-00005): ESCALATE_EDD. Sanctions: no match against screened lists. Adverse media: High severity item found ('Local crypto fund manager named in market manipulation probe') \u2014 flagged for analyst review. Risk rating: High (55/100). Main drivers: High-risk industry, Adverse media, High net worth (EDD trigger). Required action: Apply enhanced due diligence: senior management sign-off, source-of-wealth corroboration, ongoing monitoring at elevated frequency.. Routed to a human officer because: Mandatory review trigger(s): ADVERSE_MEDIA_HIGH.",
+    "decision_drivers": [
+      "ADVERSE_MEDIA_HIGH"
+    ],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "3b4339665b0d",
+      "2b1e4b64b7ae",
+      "715224838a3a",
+      "45ff389a1fe4",
+      "edf7fb6f18ed",
+      "4cc4273fc697",
+      "c22ba2d97860"
+    ]
+  },
+  {
+    "customer_id": "CUST-00006",
+    "name": "Jun Reyes",
+    "outcome": "REVIEW",
+    "risk_band": "Medium",
+    "risk_score": 33,
+    "factors": {
+      "High-risk industry": 25,
+      "Lump-sum source of wealth": 8
+    },
+    "confidence": 0.6,
+    "human_review_required": true,
+    "explanation": "Decision for Jun Reyes (CUST-00006): REVIEW. Sanctions: no match against screened lists. Risk rating: Medium (33/100). Main drivers: High-risk industry, Lump-sum source of wealth. Required action: Request missing items: verified_id_document.. Routed to a human officer because: Confidence 0.6 below floor 0.7.",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "80cde1c2fc9d",
+      "2f636b1ec667",
+      "41484b8725a1",
+      "e5d178317933",
+      "9cde38ee5459",
+      "cfb9c3da902f",
+      "b9461edfb8a8"
+    ]
+  },
+  {
+    "customer_id": "CUST-00007",
+    "name": "Olga Abdullah",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Olga Abdullah (CUST-00007): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "23c80da1bdbc",
+      "4d66141fb2e1",
+      "dfb088e86f55",
+      "4c673d848250",
+      "14c7952f65ea",
+      "e632dd49a306"
+    ]
+  },
+  {
+    "customer_id": "CUST-00008",
+    "name": "Arjun Suharto",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Arjun Suharto (CUST-00008): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "34ba6684f30a",
+      "c1d37b8eb187",
+      "85bf601099a5",
+      "1b48c7954db3",
+      "02fa82cc3838",
+      "8022d79deeff"
+    ]
+  },
+  {
+    "customer_id": "CUST-00009",
+    "name": "Marcus Lim",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 8,
+    "factors": {
+      "Lump-sum source of wealth": 8
+    },
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Marcus Lim (CUST-00009): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (8/100). Main drivers: Lump-sum source of wealth. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "4fd342f951f1",
+      "bf9291f47e18",
+      "5b2ca265b65e",
+      "86fb744a16fb",
+      "92e611493f50",
+      "63a958504d9d"
+    ]
+  },
+  {
+    "customer_id": "CUST-00010",
+    "name": "Diego Patel",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 8,
+    "factors": {
+      "Lump-sum source of wealth": 8
+    },
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Diego Patel (CUST-00010): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (8/100). Main drivers: Lump-sum source of wealth. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "a9ca28915e7f",
+      "c35a7347f46a",
+      "1b7407e5de34",
+      "55213748e994",
+      "79eb355033b2",
+      "4f8f125161e5"
+    ]
+  },
+  {
+    "customer_id": "CUST-00011",
+    "name": "Siti Sinaga",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Siti Sinaga (CUST-00011): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "5c2bca71c5b8",
+      "8abf7ea1d2a6",
+      "c518d65a78ce",
+      "d544186293c3",
+      "bf7ab88ff1d6",
+      "431e4e139635"
+    ]
+  },
+  {
+    "customer_id": "CUST-00012",
+    "name": "Chen Sinaga",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 8,
+    "factors": {
+      "Lump-sum source of wealth": 8
+    },
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Chen Sinaga (CUST-00012): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (8/100). Main drivers: Lump-sum source of wealth. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "ae8ed7d648c1",
+      "ad49650fe829",
+      "1da37ac4e47f",
+      "ca2df76b2a52",
+      "c37f9d95ec3f",
+      "d14f0404003f"
+    ]
+  },
+  {
+    "customer_id": "CUST-00013",
+    "name": "Nurul Patel",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 8,
+    "factors": {
+      "Lump-sum source of wealth": 8
+    },
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Nurul Patel (CUST-00013): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (8/100). Main drivers: Lump-sum source of wealth. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "dc3c3b78818f",
+      "fde4a1938834",
+      "e570286d0533",
+      "37aeb82b5d5a",
+      "7dac2212403f",
+      "ea78edf43785"
+    ]
+  },
+  {
+    "customer_id": "CUST-00014",
+    "name": "Aisha Rahman",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Aisha Rahman (CUST-00014): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "c5028fab09b7",
+      "4be820ccc187",
+      "faad57a26ee7",
+      "da995cb73936",
+      "361600d24a3c",
+      "0c444e080710"
+    ]
+  },
+  {
+    "customer_id": "CUST-00015",
+    "name": "Hassan Lee",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 10,
+    "factors": {
+      "High net worth (EDD trigger)": 10
+    },
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Hassan Lee (CUST-00015): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (10/100). Main drivers: High net worth (EDD trigger). Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "8fff0bb70873",
+      "b9cd7f119918",
+      "41c8e01b5a12",
+      "01d4280be538",
+      "91171cb6daba",
+      "95fd9d879545"
+    ]
+  },
+  {
+    "customer_id": "CUST-00016",
+    "name": "Kumar Al-Farsi",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 8,
+    "factors": {
+      "Lump-sum source of wealth": 8
+    },
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Kumar Al-Farsi (CUST-00016): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (8/100). Main drivers: Lump-sum source of wealth. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "0ba433acd722",
+      "67d053fc8e24",
+      "4088e78160dc",
+      "161f4b315ceb",
+      "426e8a75a56d",
+      "4966de10d2bd"
+    ]
+  },
+  {
+    "customer_id": "CUST-00017",
+    "name": "Hui Abdullah",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Hui Abdullah (CUST-00017): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "0c043f4893b8",
+      "2f4fb876e2e6",
+      "7ed807ab29fd",
+      "8e469b266b12",
+      "07384710a15d",
+      "2948c219f91c"
+    ]
+  },
+  {
+    "customer_id": "CUST-00018",
+    "name": "Jun Lim",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Jun Lim (CUST-00018): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "688bff812827",
+      "00de1348c749",
+      "82df15ab75d3",
+      "27212f2c7bbd",
+      "6133c1d72e76",
+      "9ecf3a74f2af"
+    ]
+  },
+  {
+    "customer_id": "CUST-00019",
+    "name": "Farah Ismail",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Farah Ismail (CUST-00019): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "6a6edcd7ce0a",
+      "52e1936dcdbc",
+      "698dd5b6ce57",
+      "b2815767c5ca",
+      "607af4f9a39c",
+      "ae5fc65a85d0"
+    ]
+  },
+  {
+    "customer_id": "CUST-00020",
+    "name": "Marcus Wong",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 8,
+    "factors": {
+      "Lump-sum source of wealth": 8
+    },
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Marcus Wong (CUST-00020): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (8/100). Main drivers: Lump-sum source of wealth. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "830f0a7f2b33",
+      "a4dcc4f5144e",
+      "ee0ba76d6dc6",
+      "2808842a702b",
+      "29c37e8f9c7c",
+      "83a184135349"
+    ]
+  },
+  {
+    "customer_id": "CUST-00021",
+    "name": "Hui Lim",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 10,
+    "factors": {
+      "High net worth (EDD trigger)": 10
+    },
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Hui Lim (CUST-00021): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (10/100). Main drivers: High net worth (EDD trigger). Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "45f2327ce6cc",
+      "3463f8a933be",
+      "73aa08ab9bba",
+      "0b0570a643f0",
+      "d7631636dc8c",
+      "fad8a764c3ca"
+    ]
+  },
+  {
+    "customer_id": "CUST-00022",
+    "name": "Mei Rahman",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 8,
+    "factors": {
+      "Lump-sum source of wealth": 8
+    },
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Mei Rahman (CUST-00022): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (8/100). Main drivers: Lump-sum source of wealth. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "3d1a58934a84",
+      "72778319fe8d",
+      "4b3373e3fcf8",
+      "091895039ab8",
+      "c434a455d3ff",
+      "86bb9e5de4c7"
+    ]
+  },
+  {
+    "customer_id": "CUST-00023",
+    "name": "Arjun Goh",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Arjun Goh (CUST-00023): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "43a823189bd7",
+      "c6fd3d28cdcf",
+      "cc39e516719c",
+      "beb193328f87",
+      "45fb93eb1322",
+      "cd13da3abbef"
+    ]
+  },
+  {
+    "customer_id": "CUST-00024",
+    "name": "Nurul Lim",
+    "outcome": "REVIEW",
+    "risk_band": "Medium",
+    "risk_score": 25,
+    "factors": {
+      "High-risk industry": 25
+    },
+    "confidence": 1.0,
+    "human_review_required": true,
+    "explanation": "Decision for Nurul Lim (CUST-00024): REVIEW. Sanctions: no match against screened lists. Risk rating: Medium (25/100). Main drivers: High-risk industry. Required action: Standard due diligence with analyst confirmation.. Routed to a human officer because: Outcome 'REVIEW' requires officer sign-off.",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "c67daaaedd8a",
+      "ec77a29e29a7",
+      "ef67307c2a7e",
+      "ae801741217e",
+      "1d4f788276fb",
+      "59444487ed8d",
+      "381ecae3f603"
+    ]
+  },
+  {
+    "customer_id": "CUST-00025",
+    "name": "Yuki Lim",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Yuki Lim (CUST-00025): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "710e9fd67fef",
+      "dda24e538921",
+      "3a69157f473a",
+      "1cc7dfdefae4",
+      "575e01287d99",
+      "a0451516bcf0"
+    ]
+  },
+  {
+    "customer_id": "CUST-00026",
+    "name": "Siti Suharto",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Siti Suharto (CUST-00026): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "b495c3064105",
+      "e7262d68abdd",
+      "cffa852cbb62",
+      "d1357cb57cd5",
+      "384ecbd6b384",
+      "2224463f0187"
+    ]
+  },
+  {
+    "customer_id": "CUST-00027",
+    "name": "Arjun Sinaga",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Arjun Sinaga (CUST-00027): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "06af81d09bb8",
+      "5431ea6b4a0b",
+      "2255c2491041",
+      "430d779c6169",
+      "0aad5f6e9794",
+      "60b5557537bc"
+    ]
+  },
+  {
+    "customer_id": "CUST-00028",
+    "name": "Diego Sinaga",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 8,
+    "factors": {
+      "Lump-sum source of wealth": 8
+    },
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Diego Sinaga (CUST-00028): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (8/100). Main drivers: Lump-sum source of wealth. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "d98a045abe4a",
+      "487a73584a9a",
+      "b1eeb394f017",
+      "18ee494eff9d",
+      "09037e136c10",
+      "a5459719b67a"
+    ]
+  },
+  {
+    "customer_id": "CUST-00029",
+    "name": "Sarah Al-Farsi",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 8,
+    "factors": {
+      "Lump-sum source of wealth": 8
+    },
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Sarah Al-Farsi (CUST-00029): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (8/100). Main drivers: Lump-sum source of wealth. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "4125dcf1e50e",
+      "22cf60b0358f",
+      "33ace81c8398",
+      "97864af735c2",
+      "2721bf463c8f",
+      "4952ddbdf6d2"
+    ]
+  },
+  {
+    "customer_id": "CUST-00030",
+    "name": "Lina Chong",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Lina Chong (CUST-00030): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "f3401358f74b",
+      "b5ae8b0ea22a",
+      "4073c1037435",
+      "af11e154ba61",
+      "40235c53fc33",
+      "68634b1fcb80"
+    ]
+  },
+  {
+    "customer_id": "CUST-00031",
+    "name": "Jun Ng",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Jun Ng (CUST-00031): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "fb03db7f33ab",
+      "7d19be50ce8a",
+      "bee3059c0e40",
+      "748a13f18ca8",
+      "24f9cb4ece6a",
+      "471e8387af02"
+    ]
+  },
+  {
+    "customer_id": "CUST-00032",
+    "name": "Olga Abdullah",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Olga Abdullah (CUST-00032): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "dbc2650d258b",
+      "faa7989d4fed",
+      "3ed24fabf7ef",
+      "8ad4ae564d2a",
+      "0b10c3674b44",
+      "01b61865cabe"
+    ]
+  },
+  {
+    "customer_id": "CUST-00033",
+    "name": "Nurul Nair",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Nurul Nair (CUST-00033): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "f82c162d59f2",
+      "6b1064f8edea",
+      "0556dbae621e",
+      "965cf6a34d1f",
+      "8d28bec8982c",
+      "1f50ad88104a"
+    ]
+  },
+  {
+    "customer_id": "CUST-00034",
+    "name": "Chen Hidayat",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 8,
+    "factors": {
+      "Lump-sum source of wealth": 8
+    },
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Chen Hidayat (CUST-00034): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (8/100). Main drivers: Lump-sum source of wealth. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "aab1942539e2",
+      "7af97c8c0c0d",
+      "df4b7be0d989",
+      "813f4542e6e0",
+      "cc4a2b23ff28",
+      "8676abd859b7"
+    ]
+  },
+  {
+    "customer_id": "CUST-00035",
+    "name": "Kumar Cheng",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Kumar Cheng (CUST-00035): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "d1bc869d4b5e",
+      "dbd99e13bd99",
+      "5e5fab396347",
+      "14f35a71c316",
+      "a0a185edbee2",
+      "8ddae3e686fb"
+    ]
+  },
+  {
+    "customer_id": "CUST-00036",
+    "name": "Lina Hidayat",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Lina Hidayat (CUST-00036): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "cc22150243b2",
+      "5874d0ce2b46",
+      "d01afb7b6b8e",
+      "e2ed95d749ae",
+      "fa3333495e15",
+      "2389b55116b7"
+    ]
+  },
+  {
+    "customer_id": "CUST-00037",
+    "name": "Lina Tan",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 8,
+    "factors": {
+      "Lump-sum source of wealth": 8
+    },
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Lina Tan (CUST-00037): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (8/100). Main drivers: Lump-sum source of wealth. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "0aa3acba20a2",
+      "568f5796dc81",
+      "146e4e4161cf",
+      "4f20e6d7f599",
+      "19320c17a53f",
+      "0c5db6b05ac6"
+    ]
+  },
+  {
+    "customer_id": "CUST-00038",
+    "name": "Sarah Sinaga",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Sarah Sinaga (CUST-00038): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "bf7ed3d07f16",
+      "277d6de532a5",
+      "ee2d58da84f0",
+      "05a593e42107",
+      "4cfaa4768c78",
+      "4209cf590081"
+    ]
+  },
+  {
+    "customer_id": "CUST-00039",
+    "name": "Chloe Rahman",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 8,
+    "factors": {
+      "Lump-sum source of wealth": 8
+    },
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Chloe Rahman (CUST-00039): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (8/100). Main drivers: Lump-sum source of wealth. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "98bc84a92542",
+      "7ac1814c8c6b",
+      "3b88f1c8825b",
+      "3fbc961c51cb",
+      "b0041534f344",
+      "003c0ee7f380"
+    ]
+  },
+  {
+    "customer_id": "CUST-00040",
+    "name": "Chen Patel",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Chen Patel (CUST-00040): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "c6d8dbe21494",
+      "f760e750a2df",
+      "16c6c1278b00",
+      "99fca5c84d1a",
+      "dba048c38cbe",
+      "a02ee61de347"
+    ]
+  },
+  {
+    "customer_id": "CUST-00041",
+    "name": "Ibrahim Abdullah",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Ibrahim Abdullah (CUST-00041): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "6c17f1892f01",
+      "6f675720d7ea",
+      "94ee1115ddc6",
+      "1bb3cb614b79",
+      "933f11661f77",
+      "e340ea9eb798"
+    ]
+  },
+  {
+    "customer_id": "CUST-00042",
+    "name": "Hassan Sharma",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Hassan Sharma (CUST-00042): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "3a249dff6dc8",
+      "3dadec9bd178",
+      "cfff441816e8",
+      "3c8ce51ceab7",
+      "2d667ce58a10",
+      "b48e7372e702"
+    ]
+  },
+  {
+    "customer_id": "CUST-00043",
+    "name": "Kumar Patel",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 8,
+    "factors": {
+      "Lump-sum source of wealth": 8
+    },
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Kumar Patel (CUST-00043): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (8/100). Main drivers: Lump-sum source of wealth. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "d6af8cae80a4",
+      "7d154973c51b",
+      "a5394716b367",
+      "bf8ccfb710cd",
+      "d74aae0f3c05",
+      "71b4aadab3d5"
+    ]
+  },
+  {
+    "customer_id": "CUST-00044",
+    "name": "Chloe Sinaga",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Chloe Sinaga (CUST-00044): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "9456977b8b66",
+      "bfe3a4226a97",
+      "cdc47aefa6d4",
+      "b2897f11767c",
+      "57226ad150d7",
+      "5c884ec5b8f3"
+    ]
+  },
+  {
+    "customer_id": "CUST-00045",
+    "name": "Farah Nguyen",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 8,
+    "factors": {
+      "Lump-sum source of wealth": 8
+    },
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Farah Nguyen (CUST-00045): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (8/100). Main drivers: Lump-sum source of wealth. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "ef22a8f5ea66",
+      "6983de0ab35e",
+      "c19da1b1761b",
+      "d8ea3916c81c",
+      "89cb8a6a23de",
+      "5bb056c53fbb"
+    ]
+  },
+  {
+    "customer_id": "CUST-00046",
+    "name": "Priya Cheng",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Priya Cheng (CUST-00046): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "10e769d0e556",
+      "f3c2a063b4de",
+      "9dfac49a5585",
+      "a1a9edf0d527",
+      "b12f842a2496",
+      "a25a3bf66f11"
+    ]
+  },
+  {
+    "customer_id": "CUST-00047",
+    "name": "Ibrahim Ivanova",
+    "outcome": "REVIEW",
+    "risk_band": "Medium",
+    "risk_score": 33,
+    "factors": {
+      "High-risk industry": 25,
+      "Lump-sum source of wealth": 8
+    },
+    "confidence": 1.0,
+    "human_review_required": true,
+    "explanation": "Decision for Ibrahim Ivanova (CUST-00047): REVIEW. Sanctions: no match against screened lists. Risk rating: Medium (33/100). Main drivers: High-risk industry, Lump-sum source of wealth. Required action: Standard due diligence with analyst confirmation.. Routed to a human officer because: Outcome 'REVIEW' requires officer sign-off.",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "df184e064990",
+      "85ad73ff1f24",
+      "887ea1f21a7d",
+      "c2312be8e8e8",
+      "cf71eed6f958",
+      "c624e12b731a",
+      "da5f28b20dec"
+    ]
+  },
+  {
+    "customer_id": "CUST-00048",
+    "name": "Priya Chong",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Priya Chong (CUST-00048): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "f9b4d1537e45",
+      "e4f06f21a7f6",
+      "1d0d02dc3eda",
+      "4a6cedfdf1ae",
+      "ec91ada711c2",
+      "e44021e91ec4"
+    ]
+  },
+  {
+    "customer_id": "CUST-00049",
+    "name": "Ravi Ivanova",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Ravi Ivanova (CUST-00049): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "0afba674f473",
+      "e14243fb5b8d",
+      "4c434e79f94f",
+      "8c56f962922f",
+      "98dc6cdc167e",
+      "484d18563337"
+    ]
+  },
+  {
+    "customer_id": "CUST-00050",
+    "name": "Chen Nair",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 8,
+    "factors": {
+      "Lump-sum source of wealth": 8
+    },
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Chen Nair (CUST-00050): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (8/100). Main drivers: Lump-sum source of wealth. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "98d076da8de7",
+      "7cb07c035856",
+      "ecc2fc631e50",
+      "9302ba0831a2",
+      "8b6dc4179279",
+      "cdc7fb8c7974"
+    ]
+  },
+  {
+    "customer_id": "CUST-00051",
+    "name": "Priya Nguyen",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 8,
+    "factors": {
+      "Lump-sum source of wealth": 8
+    },
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Priya Nguyen (CUST-00051): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (8/100). Main drivers: Lump-sum source of wealth. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "984cc8614729",
+      "06ca3dc065ff",
+      "04123a31363c",
+      "ce31f844c170",
+      "2f5ebc3b5fa2",
+      "d2a5c8a8388f"
+    ]
+  },
+  {
+    "customer_id": "CUST-00052",
+    "name": "Hui Ivanova",
+    "outcome": "REVIEW",
+    "risk_band": "Medium",
+    "risk_score": 33,
+    "factors": {
+      "High-risk industry": 25,
+      "Lump-sum source of wealth": 8
+    },
+    "confidence": 1.0,
+    "human_review_required": true,
+    "explanation": "Decision for Hui Ivanova (CUST-00052): REVIEW. Sanctions: no match against screened lists. Risk rating: Medium (33/100). Main drivers: High-risk industry, Lump-sum source of wealth. Required action: Standard due diligence with analyst confirmation.. Routed to a human officer because: Outcome 'REVIEW' requires officer sign-off.",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "078d373c9ca0",
+      "574083d93d92",
+      "287322b244bf",
+      "cf39a43095aa",
+      "589a14e28edb",
+      "b2b1ad9e6388",
+      "6fc240905ce3"
+    ]
+  },
+  {
+    "customer_id": "CUST-00053",
+    "name": "Hassan Tan",
+    "outcome": "REVIEW",
+    "risk_band": "Medium",
+    "risk_score": 25,
+    "factors": {
+      "High-risk industry": 25
+    },
+    "confidence": 1.0,
+    "human_review_required": true,
+    "explanation": "Decision for Hassan Tan (CUST-00053): REVIEW. Sanctions: no match against screened lists. Risk rating: Medium (25/100). Main drivers: High-risk industry. Required action: Standard due diligence with analyst confirmation.. Routed to a human officer because: Outcome 'REVIEW' requires officer sign-off.",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "27fb5cae1af4",
+      "6c8d4319a33c",
+      "fca746f50b0d",
+      "b3acac86caac",
+      "06f9cefbecb0",
+      "846b5a873767",
+      "98244920216a"
+    ]
+  },
+  {
+    "customer_id": "CUST-00054",
+    "name": "Yuki Wong",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Yuki Wong (CUST-00054): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "cc98e372975c",
+      "a856b49fe683",
+      "8ca036a03723",
+      "3fdffba78d97",
+      "479737df29a7",
+      "e176946aadad"
+    ]
+  },
+  {
+    "customer_id": "CUST-00055",
+    "name": "Hui Ismail",
+    "outcome": "REVIEW",
+    "risk_band": "Medium",
+    "risk_score": 33,
+    "factors": {
+      "High-risk industry": 25,
+      "Lump-sum source of wealth": 8
+    },
+    "confidence": 1.0,
+    "human_review_required": true,
+    "explanation": "Decision for Hui Ismail (CUST-00055): REVIEW. Sanctions: no match against screened lists. Risk rating: Medium (33/100). Main drivers: High-risk industry, Lump-sum source of wealth. Required action: Standard due diligence with analyst confirmation.. Routed to a human officer because: Outcome 'REVIEW' requires officer sign-off.",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "ca765b4bc1e7",
+      "55d81635f832",
+      "3c30ed52ba71",
+      "0e7e2b5cb076",
+      "efe341fc29f8",
+      "c0cdb9ba01de",
+      "58f8c93aa521"
+    ]
+  },
+  {
+    "customer_id": "CUST-00056",
+    "name": "Chloe Ivanova",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Chloe Ivanova (CUST-00056): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "549642e1b56d",
+      "57cc12d9312d",
+      "f3236f55de12",
+      "350edd1ec878",
+      "bb67cbd684c1",
+      "61762222a70b"
+    ]
+  },
+  {
+    "customer_id": "CUST-00057",
+    "name": "Wei Koh",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 8,
+    "factors": {
+      "Lump-sum source of wealth": 8
+    },
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Wei Koh (CUST-00057): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (8/100). Main drivers: Lump-sum source of wealth. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "a6babaa9ae46",
+      "c9f0b42a4e42",
+      "95db1512b983",
+      "12be39a7ff6e",
+      "b9dec3bc9034",
+      "f0153e0908d6"
+    ]
+  },
+  {
+    "customer_id": "CUST-00058",
+    "name": "Wei Sinaga",
+    "outcome": "REVIEW",
+    "risk_band": "Medium",
+    "risk_score": 25,
+    "factors": {
+      "High-risk industry": 25
+    },
+    "confidence": 1.0,
+    "human_review_required": true,
+    "explanation": "Decision for Wei Sinaga (CUST-00058): REVIEW. Sanctions: no match against screened lists. Risk rating: Medium (25/100). Main drivers: High-risk industry. Required action: Standard due diligence with analyst confirmation.. Routed to a human officer because: Outcome 'REVIEW' requires officer sign-off.",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "cfa2d02ee6fd",
+      "36ce924a207c",
+      "967622ee8671",
+      "7240b63cf4c3",
+      "2b3774351138",
+      "998dd0998ef9",
+      "2537463bdee5"
+    ]
+  },
+  {
+    "customer_id": "CUST-00059",
+    "name": "Wei Lee",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Wei Lee (CUST-00059): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "a6ecf2f46755",
+      "936e173e18c7",
+      "aafc8e830c84",
+      "f01a57682b86",
+      "12e3b296ea45",
+      "d0a59878330a"
+    ]
+  },
+  {
+    "customer_id": "CUST-00060",
+    "name": "Grace Nair",
+    "outcome": "APPROVE_STP",
+    "risk_band": "Low",
+    "risk_score": 0,
+    "factors": {},
+    "confidence": 1.0,
+    "human_review_required": false,
+    "explanation": "Decision for Grace Nair (CUST-00060): APPROVE_STP. Sanctions: no match against screened lists. Risk rating: Low (0/100). Main drivers: No elevated factors. Required action: Approve via straight-through processing; standard periodic review cycle..",
+    "decision_drivers": [],
+    "feat_principles": [
+      "Accountability",
+      "Ethics",
+      "Fairness",
+      "Transparency"
+    ],
+    "audit_entries": [
+      "433a2ae25ac1",
+      "594178628dfa",
+      "e4d1569aacc5",
+      "f8c2b2e0a9c3",
+      "7a759c3f513c",
+      "99507e59229d"
+    ]
+  }
+]

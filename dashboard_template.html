@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KYC Onboarding Agent — Compliance Console</title>
+<style>
+  :root{
+    --bg:#0d111c; --panel:#151a28; --panel2:#1b2233; --hair:#283147;
+    --ink:#e8ebf2; --muted:#8b94a8; --faint:#5b6478;
+    --approve:#4cae8b; --review:#d9a441; --escalate:#8674e8; --reject:#d65b52;
+    --verify:#4fd1c5;
+    --serif:'Iowan Old Style','Palatino Linotype',Palatino,Georgia,serif;
+    --sans:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+    --mono:ui-monospace,'SF Mono',Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+    font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:var(--verify)}
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 22px 60px}
+
+  /* Header */
+  header{display:flex;flex-wrap:wrap;align-items:flex-end;gap:16px;
+    border-bottom:1px solid var(--hair);padding-bottom:18px}
+  .title{font-family:var(--serif);font-size:30px;font-weight:600;letter-spacing:.2px;line-height:1.1}
+  .title small{display:block;font-family:var(--sans);font-size:12px;font-weight:500;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:7px}
+  .badges{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+  .badge{font-size:11px;font-weight:600;letter-spacing:.04em;padding:6px 11px;border-radius:999px;
+    border:1px solid var(--hair);color:var(--muted);display:flex;align-items:center;gap:7px}
+  .badge.synthetic{border-color:#3a4258}
+  .dot{width:7px;height:7px;border-radius:50%}
+  #integrity .dot{background:var(--verify)}
+  #integrity.broken{color:var(--reject);border-color:var(--reject)}
+  #integrity.broken .dot{background:var(--reject)}
+
+  /* KPI strip */
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);margin:22px 0 6px;
+    border:1px solid var(--hair);border-radius:10px;overflow:hidden;background:var(--panel)}
+  .kpi{padding:16px 18px;border-right:1px solid var(--hair)}
+  .kpi:last-child{border-right:none}
+  .kpi .v{font-family:var(--serif);font-size:26px;font-weight:600}
+  .kpi .l{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-top:3px}
+  .kpi .v.green{color:var(--approve)} .kpi .v.red{color:var(--reject)}
+  .kpi .v.violet{color:var(--escalate)} .kpi .v.amber{color:var(--review)}
+
+  .layout{display:grid;grid-template-columns:340px 1fr;gap:18px;margin-top:18px}
+
+  /* Queue */
+  .panel{background:var(--panel);border:1px solid var(--hair);border-radius:10px}
+  .panel h2{font-family:var(--serif);font-size:15px;font-weight:600;margin:0;
+    padding:14px 16px;border-bottom:1px solid var(--hair);display:flex;align-items:center;gap:8px}
+  .filters{display:flex;flex-wrap:wrap;gap:6px;padding:12px 14px;border-bottom:1px solid var(--hair)}
+  .chip{font-size:11px;font-weight:600;padding:5px 9px;border-radius:6px;cursor:pointer;
+    border:1px solid var(--hair);background:transparent;color:var(--muted)}
+  .chip[data-active="1"]{background:var(--panel2);color:var(--ink);border-color:#3a4258}
+  .queue{max-height:560px;overflow:auto}
+  .case{padding:11px 16px;border-bottom:1px solid var(--hair);cursor:pointer;display:flex;
+    align-items:center;gap:10px}
+  .case:hover{background:var(--panel2)}
+  .case[data-sel="1"]{background:var(--panel2);box-shadow:inset 3px 0 0 var(--verify)}
+  .case .nm{font-weight:600;font-size:13px}
+  .case .id{font-family:var(--mono);font-size:11px;color:var(--faint)}
+  .case .star{color:var(--review);font-size:11px}
+  .pill{margin-left:auto;font-size:10px;font-weight:700;letter-spacing:.03em;
+    padding:3px 8px;border-radius:999px;white-space:nowrap}
+  .pill.APPROVE_STP{background:rgba(76,174,139,.15);color:var(--approve)}
+  .pill.REVIEW{background:rgba(217,164,65,.15);color:var(--review)}
+  .pill.ESCALATE_EDD{background:rgba(134,116,232,.16);color:var(--escalate)}
+  .pill.REJECT_AND_REPORT{background:rgba(214,91,82,.16);color:var(--reject)}
+
+  /* Detail */
+  .detail{padding:18px 20px}
+  .detail .head{display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap}
+  .detail .nm{font-family:var(--serif);font-size:22px;font-weight:600}
+  .detail .sub{font-family:var(--mono);font-size:12px;color:var(--faint);margin-top:2px}
+  .gauge{margin-left:auto;text-align:right}
+  .gauge .score{font-family:var(--serif);font-size:30px;font-weight:600}
+  .gauge .band{font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+  .band.Low{color:var(--approve)} .band.Medium{color:var(--review)} .band.High{color:var(--reject)}
+
+  .explain{margin:16px 0;padding:14px 16px;background:var(--panel2);border-radius:8px;
+    border-left:3px solid var(--verify);font-size:13.5px;line-height:1.65}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px}
+  .lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:8px}
+  .factor{display:flex;justify-content:space-between;font-size:13px;padding:4px 0;border-bottom:1px dashed var(--hair)}
+  .factor span:last-child{font-family:var(--mono);color:var(--muted)}
+  .feat{display:inline-block;font-size:11px;font-weight:600;padding:4px 9px;border-radius:6px;
+    margin:0 6px 6px 0;background:var(--panel2);border:1px solid var(--hair);color:var(--muted)}
+  .drivers{margin-top:4px}
+  .driver{display:inline-block;font-size:11px;font-weight:700;padding:4px 9px;border-radius:6px;
+    margin:0 6px 6px 0;background:rgba(214,91,82,.12);color:var(--reject)}
+
+  /* Ledger */
+  .ledger-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+    padding:14px 16px;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+  .ledger-head h3{font-family:var(--serif);font-size:15px;margin:0;font-weight:600}
+  .btn{margin-left:auto;font-size:12px;font-weight:600;padding:7px 13px;border-radius:7px;cursor:pointer;
+    background:transparent;border:1px solid var(--reject);color:var(--reject)}
+  .btn:hover{background:rgba(214,91,82,.1)}
+  .btn.reset{border-color:var(--hair);color:var(--muted)}
+  .btn.reset:hover{background:var(--panel2)}
+  .chain{padding:6px 16px 16px}
+  .evt{display:grid;grid-template-columns:18px 1fr auto;gap:10px;align-items:center;
+    padding:9px 0;border-bottom:1px solid var(--hair);font-size:12.5px}
+  .rail{display:flex;flex-direction:column;align-items:center}
+  .knot{width:9px;height:9px;border-radius:50%;background:var(--verify);flex:none}
+  .link{width:2px;height:18px;background:var(--hair)}
+  .evt.broken .knot{background:var(--reject)}
+  .evt.broken{background:rgba(214,91,82,.07)}
+  .evt .agent{font-weight:600}
+  .evt .act{color:var(--muted);font-size:11px}
+  .evt .hash{font-family:var(--mono);font-size:11px;color:var(--faint);text-align:right}
+  .evt.tampered .hash{color:var(--reject)}
+  .evt .tag{font-size:10px;color:var(--faint);font-family:var(--mono)}
+  .note{font-size:11.5px;color:var(--muted);padding:10px 16px;line-height:1.5}
+  .empty{padding:40px;text-align:center;color:var(--faint)}
+  @media(max-width:860px){.layout{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}
+    .kpi:nth-child(2){border-right:none}.grid2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="title"><small>Onboarding · Financial Crime · Synthetic environment</small>
+      KYC Onboarding Agent</div>
+    <div class="badges">
+      <span class="badge synthetic"><span class="dot" style="background:var(--muted)"></span>Synthetic data · zero PII</span>
+      <span class="badge" id="integrity"><span class="dot"></span><span id="integrity-txt">Audit chain verified</span></span>
+    </div>
+  </header>
+
+  <div class="kpis" id="kpis"></div>
+
+  <div class="layout">
+    <div class="panel">
+      <h2>Application queue</h2>
+      <div class="filters" id="filters"></div>
+      <div class="queue" id="queue"></div>
+    </div>
+
+    <div class="panel">
+      <h2>Case file</h2>
+      <div id="detail"><div class="empty">Select an application to review its decision and audit trail.</div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const DATA = __DATA__;
+const DISPO = ["APPROVE_STP","REVIEW","ESCALATE_EDD","REJECT_AND_REPORT"];
+const LABEL = {APPROVE_STP:"Approve (STP)",REVIEW:"Review",ESCALATE_EDD:"Escalate (EDD)",REJECT_AND_REPORT:"Reject + report"};
+let activeFilter = "ALL", selected = null, tampered = {};
+
+// --- compact synchronous SHA-256 (so the tamper demo recomputes a real hash) ---
+function sha256(ascii){
+  function rr(v,a){return (v>>>a)|(v<<(32-a))}
+  const K=[]; const H=[]; let i,j;
+  let s=[2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101,103,107,109,113,127,131,137,139,149,151,157,163,167,173,179,181,191,193,197,199,211,223,227,229,233,239,241,251,257,263,269,271,277,281,283,293,307,311];
+  function frac(x,n){return Math.floor((x-Math.floor(x))*Math.pow(2,n))>>>0}
+  for(i=0;i<8;i++)H[i]=frac(Math.pow(s[i],1/2),32);
+  for(i=0;i<64;i++)K[i]=frac(Math.pow(s[i],1/3),32);
+  let bytes=[]; for(i=0;i<ascii.length;i++){let c=ascii.charCodeAt(i);
+    if(c<128)bytes.push(c);else if(c<2048){bytes.push(192|(c>>6),128|(c&63))}
+    else{bytes.push(224|(c>>12),128|((c>>6)&63),128|(c&63))}}
+  const l=bytes.length*8; bytes.push(0x80); while((bytes.length%64)!=56)bytes.push(0);
+  for(i=7;i>=0;i--)bytes.push((l/Math.pow(2,i*8))&255);
+  const w=new Array(64);
+  for(i=0;i<bytes.length;i+=64){
+    for(j=0;j<16;j++)w[j]=(bytes[i+j*4]<<24)|(bytes[i+j*4+1]<<16)|(bytes[i+j*4+2]<<8)|(bytes[i+j*4+3]);
+    for(j=16;j<64;j++){let s0=rr(w[j-15],7)^rr(w[j-15],18)^(w[j-15]>>>3);
+      let s1=rr(w[j-2],17)^rr(w[j-2],19)^(w[j-2]>>>10);
+      w[j]=(w[j-16]+s0+w[j-7]+s1)>>>0}
+    let [a,b,c,d,e,f,g,h]=H;
+    for(j=0;j<64;j++){let S1=rr(e,6)^rr(e,11)^rr(e,25);let ch=(e&f)^(~e&g);
+      let t1=(h+S1+ch+K[j]+w[j])>>>0;let S0=rr(a,2)^rr(a,13)^rr(a,22);
+      let mj=(a&b)^(a&c)^(b&c);let t2=(S0+mj)>>>0;
+      h=g;g=f;f=e;e=(d+t1)>>>0;d=c;c=b;b=a;a=(t1+t2)>>>0}
+    H[0]=(H[0]+a)>>>0;H[1]=(H[1]+b)>>>0;H[2]=(H[2]+c)>>>0;H[3]=(H[3]+d)>>>0;
+    H[4]=(H[4]+e)>>>0;H[5]=(H[5]+f)>>>0;H[6]=(H[6]+g)>>>0;H[7]=(H[7]+h)>>>0;
+  }
+  return H.map(x=>("00000000"+(x>>>0).toString(16)).slice(-8)).join("");
+}
+
+function auditFor(id){ return DATA.audit.entries.filter(e=>e.customer_id===id); }
+
+function renderKpis(){
+  const d=DATA.decisions, n=d.length;
+  const c=o=>d.filter(x=>x.outcome===o).length;
+  const stp=(c("APPROVE_STP")/n*100).toFixed(0);
+  const human=d.filter(x=>x.human_review_required).length;
+  const blocked=c("REJECT_AND_REPORT"), edd=c("ESCALATE_EDD");
+  document.getElementById("kpis").innerHTML=`
+    <div class="kpi"><div class="v green">${stp}%</div><div class="l">Straight-through rate</div></div>
+    <div class="kpi"><div class="v violet">${edd}</div><div class="l">Escalated to EDD</div></div>
+    <div class="kpi"><div class="v red">${blocked}</div><div class="l">Blocked + reported</div></div>
+    <div class="kpi"><div class="v amber">${human}</div><div class="l">Human-in-the-loop</div></div>`;
+}
+
+function renderFilters(){
+  const f=document.getElementById("filters");
+  const counts={ALL:DATA.decisions.length};
+  DISPO.forEach(o=>counts[o]=DATA.decisions.filter(x=>x.outcome===o).length);
+  const opts=["ALL",...DISPO];
+  f.innerHTML=opts.map(o=>`<button class="chip" data-f="${o}" data-active="${o===activeFilter?1:0}">${o==="ALL"?"All":LABEL[o]} ${counts[o]}</button>`).join("");
+  f.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{activeFilter=b.dataset.f;renderFilters();renderQueue();});
+}
+
+function renderQueue(){
+  const q=document.getElementById("queue");
+  const list=DATA.decisions.filter(d=>activeFilter==="ALL"||d.outcome===activeFilter);
+  q.innerHTML=list.map(d=>{
+    const star=d.showcase?`<span class="star" title="Planted demo case">★</span>`:"";
+    return `<div class="case" data-id="${d.customer_id}" data-sel="${selected===d.customer_id?1:0}">
+      <div><div class="nm">${d.name} ${star}</div><div class="id">${d.customer_id}</div></div>
+      <span class="pill ${d.outcome}">${LABEL[d.outcome]}</span></div>`;
+  }).join("");
+  q.querySelectorAll(".case").forEach(c=>c.onclick=()=>{selected=c.dataset.id;renderQueue();renderDetail();});
+}
+
+function verifyChain(){
+  // Link-continuity check across the WHOLE chain: each prev_hash must equal the
+  // previous entry's (possibly recomputed) entry_hash. Mirrors the Python verifier.
+  const all=DATA.audit.entries; let prev="0".repeat(64); let ok=true; let breakAt=null;
+  for(const e of all){
+    const h=tampered[e.entry_hash]?tampered[e.entry_hash].newHash:e.entry_hash;
+    if(e.prev_hash!==prev){ ok=false; if(breakAt===null)breakAt=e.entry_hash; }
+    prev=h;
+  }
+  const badge=document.getElementById("integrity");
+  const txt=document.getElementById("integrity-txt");
+  badge.classList.toggle("broken",!ok);
+  txt.textContent=ok?"Audit chain verified":"Tamper detected — chain broken";
+  return {ok,breakAt};
+}
+
+function renderDetail(){
+  const d=DATA.decisions.find(x=>x.customer_id===selected);
+  if(!d){return}
+  const factors=d.factors||{};
+  const featSet=new Set(); (d.feat_principles||[]).forEach(p=>featSet.add(p));
+  const el=document.getElementById("detail");
+  el.innerHTML=`
+    <div class="detail">
+      <div class="head">
+        <div><div class="nm">${d.name}</div><div class="sub">${d.customer_id} · confidence ${d.confidence}</div></div>
+        <div class="gauge"><div class="score band ${d.risk_band}">${d.risk_score}</div>
+          <div class="band ${d.risk_band}">${d.risk_band} risk</div></div>
+      </div>
+      <div style="margin-top:10px"><span class="pill ${d.outcome}">${LABEL[d.outcome]}</span></div>
+      <div class="explain">${d.explanation}</div>
+      <div class="grid2">
+        <div><div class="lbl">Risk factors</div>${
+          Object.keys(factors).length?Object.entries(factors).map(([k,v])=>`<div class="factor"><span>${k}</span><span>+${v}</span></div>`).join(""):'<div class="factor"><span>No elevated factors</span><span>0</span></div>'
+        }</div>
+        <div><div class="lbl">Decision drivers</div>
+          <div class="drivers">${(d.decision_drivers||[]).length?d.decision_drivers.map(x=>`<span class="driver">${x}</span>`).join(""):'<span class="feat">Clean — no flags</span>'}</div>
+          <div class="lbl" style="margin-top:16px">Governance — FEAT principles touched</div>
+          <div>${[...featSet].map(p=>`<span class="feat">${p}</span>`).join("")}</div>
+        </div>
+      </div>
+    </div>
+    <div class="ledger-head">
+      <h3>Audit ledger — hash chain</h3>
+      <button class="btn" id="tamperBtn">Simulate tampering</button>
+      <button class="btn reset" id="resetBtn">Reset</button>
+    </div>
+    <div class="chain" id="chain"></div>
+    <div class="note">Each event stores a SHA-256 hash of its content plus the previous event's hash.
+      Altering any entry changes its hash and breaks every downstream link — which is how the chain
+      proves an audit log was not edited after the fact. This is the accountability spine a regulator inspects.</div>`;
+  renderChain();
+  document.getElementById("tamperBtn").onclick=doTamper;
+  document.getElementById("resetBtn").onclick=()=>{tampered={};renderChain();verifyChain();};
+}
+
+function renderChain(){
+  const entries=auditFor(selected);
+  const {breakAt}=verifyChain();
+  const c=document.getElementById("chain");
+  // mark broken from the first downstream link of any tampered entry in this case
+  let brokeFrom=false;
+  c.innerHTML=entries.map((e,i)=>{
+    const t=tampered[e.entry_hash];
+    const shown=t?t.newHash:e.entry_hash;
+    if(t)brokeFrom=true;
+    const broken=brokeFrom&&i>0&&tampered[entries[i-1].entry_hash];
+    const cls=(t?"tampered ":"")+(broken?"broken":"");
+    const tags=(e.feat_tags&&e.feat_tags.principles||[]).join(" · ");
+    return `<div class="evt ${cls}">
+      <div class="rail"><div class="knot"></div>${i<entries.length-1?'<div class="link"></div>':''}</div>
+      <div><div class="agent">${e.agent} <span class="act">· ${e.action}</span></div>
+        <div class="tag">${tags}${e.human_review_required?' · HUMAN REVIEW':''}</div></div>
+      <div class="hash">${shown.slice(0,18)}…</div>
+    </div>`;
+  }).join("");
+}
+
+function doTamper(){
+  const entries=auditFor(selected);
+  const target=entries.find(e=>e.action==="decision")||entries[0];
+  if(!target)return;
+  // Simulate editing the logged outcome, then recompute the real SHA-256 of the altered content.
+  const altered=JSON.stringify({...target.output,outcome:"APPROVE_STP",_edited:true});
+  tampered[target.entry_hash]={newHash:sha256(altered+target.prev_hash)};
+  renderChain(); verifyChain();
+}
+
+renderKpis(); renderFilters(); renderQueue(); verifyChain();
+// auto-open the sanctions case for an immediate "wow"
+selected=(DATA.decisions.find(d=>d.outcome==="REJECT_AND_REPORT")||DATA.decisions[0]).customer_id;
+renderQueue(); renderDetail();
+</script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+# The MVP runs on the Python 3.9+ standard library alone — no install required.
+# That portability is deliberate: an auditor (or interviewer) can run it on any
+# machine, offline, with zero hidden dependencies.
+#
+# For a production hardening path, these are the drop-in upgrades:
+# rapidfuzz>=3.0        # faster, more accurate fuzzy name matching than difflib
+# anthropic>=0.40       # optional LLM layer for adverse-media summarisation
+# pydantic>=2.0         # schema validation on intake
+# fastapi>=0.110        # wrap the orchestrator as an API for live onboarding

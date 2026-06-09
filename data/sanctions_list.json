@@ -1,0 +1,26 @@
+[
+  {
+    "synthetic": true,
+    "list": "UN Consolidated (synthetic)",
+    "name": "Viktor Petrov",
+    "dob": "1971-06-15",
+    "country": "SY",
+    "program": "Counter-terrorism financing"
+  },
+  {
+    "synthetic": true,
+    "list": "OFAC SDN (synthetic)",
+    "name": "Olga Ivanova",
+    "dob": "1980-02-20",
+    "country": "RU",
+    "program": "Sectoral sanctions"
+  },
+  {
+    "synthetic": true,
+    "list": "EU Consolidated (synthetic)",
+    "name": "Ahmed Al-Farsi",
+    "dob": "1975-11-05",
+    "country": "SY",
+    "program": "Asset freeze"
+  }
+]

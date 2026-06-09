@@ -1,0 +1,18 @@
+[
+  {
+    "synthetic": true,
+    "name": "Daniel Reyes",
+    "dob": "1968-09-30",
+    "country": "PH",
+    "position": "Deputy Minister of Finance",
+    "category": "Senior Government Official"
+  },
+  {
+    "synthetic": true,
+    "name": "Grace Suharto",
+    "dob": "1972-04-18",
+    "country": "ID",
+    "position": "Provincial Governor",
+    "category": "Senior Government Official"
+  }
+]

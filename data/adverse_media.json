@@ -1,0 +1,20 @@
+[
+  {
+    "synthetic": true,
+    "name": "Marcus Goh",
+    "headline": "Local crypto fund manager named in market manipulation probe",
+    "category": "Financial crime allegation",
+    "severity": "High",
+    "source": "synthetic-wire",
+    "date": "2026-02-11"
+  },
+  {
+    "synthetic": true,
+    "name": "Kumar Nair",
+    "headline": "Businessman cleared after tax dispute settlement",
+    "category": "Resolved civil matter",
+    "severity": "Low",
+    "source": "synthetic-wire",
+    "date": "2025-08-03"
+  }
+]
