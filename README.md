@@ -3,7 +3,7 @@
 A working, multi-agent KYC (Know Your Customer) onboarding system that runs in
 one command and ships with an interactive browser demo. It processes synthetic
 customer applications through specialist agents — intake, screening, risk
-scoring, decision — and wraps every step in a governance layer mapped to **MAS
+scoring, decision and wraps every step in a governance layer mapped to **MAS
 FEAT** and the **NIST AI RMF**, with a **tamper-evident audit trail**.
 
 The design question it answers: in a regulated setting it is not enough for an
