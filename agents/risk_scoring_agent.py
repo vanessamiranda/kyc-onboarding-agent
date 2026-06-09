@@ -43,6 +43,13 @@ class RiskScoringAgent(BaseAgent):
             factors["Lump-sum source of wealth"] = 8
         if customer["annual_income_sgd"] >= 500_000:
             factors["High net worth (EDD trigger)"] = 10
+        # Profile-consistency check: does the money flowing through the account
+        # match what the customer says they earn? Throughput well above declared
+        # income is a classic money-laundering red flag (funds inconsistent with
+        # the stated profile), so it adds to the risk score.
+        annual_throughput = customer["expected_monthly_volume_sgd"] * 12
+        if annual_throughput > customer["annual_income_sgd"] * 1.2:
+            factors["Throughput exceeds declared income"] = 15
 
         # Screening outcomes feed the score
         if screening["pep"]["hit"]:
